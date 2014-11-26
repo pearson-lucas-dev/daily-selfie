@@ -119,6 +119,8 @@ public class SelfieListActivity extends ListActivity implements LoaderCallbacks<
 		        	Log.i(TAG,"starting camera intent");
 		            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
 		                    Uri.fromFile(photoFile));
+		            takePictureIntent.putExtra("android.intent.extras.CAMERA_FACING",
+		            	Camera.CameraInfo.CAMERA_FACING_FRONT); 
 		            startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
 		        }
 		    }
